@@ -1,3 +1,19 @@
+// header event
+const elem = document.documentElement;
+$(window).on("scroll", () => {
+  /* console.log('scrollTop',elem.scrollTop);
+    console.log('pageYOffset',pageYOffset);
+    console.log('scrollY',scrollY); */
+
+  if (scrollY > 100) {
+    $("header .logo").addClass("on");
+    $("header ul").addClass("on");
+  } else {
+    $("header .logo").removeClass("on");
+    $("header ul").removeClass("on");
+  }
+});
+
 // top text scroll event
 
 gsap.to(".text-wrapper", {
@@ -55,6 +71,7 @@ $(".circle-wrapper").each(function (index) {
   );
 });
 
+// app event
 gsap.to(".sticky1", {
   scrollTrigger: {
     trigger: ".mobile-app-text1 ",
@@ -82,7 +99,7 @@ gsap.to(".sticky3", {
   },
 });
 
-// text event
+// app text event
 gsap.set(".mobile-app-text1 .word", { width: 0 });
 
 gsap
@@ -136,6 +153,10 @@ gsap
     ease: "none",
     stagger: 5,
   });
+
+// mobile text
+
+// horizontal
 const sections = gsap.utils.toArray(".horizon-container");
 
 let scrollTween = gsap.to(sections, {
@@ -158,16 +179,19 @@ gsap.to(".horizon-cotainer-wrapper", {
   },
 });
 
+// img gallery
 gsap.to(".op", {
   ease: "none",
+  duration: 5,
   scrollTrigger: {
     trigger: ".img-wrapper",
     scrub: 1,
-    end: "+=1000",
+    end: "+=1200",
   },
   opacity: 1,
 });
 
+// dogrun
 gsap.to(".dogrun-wrapper", {
   x: 1000,
   ease: "none",
@@ -178,6 +202,7 @@ gsap.to(".dogrun-wrapper", {
   },
 });
 
+// footer top button
 const goToup = document.querySelector(".top");
 $(".top").on("click", (e) => {
   e.preventDefault();
@@ -186,4 +211,13 @@ $(".top").on("click", (e) => {
     top: 0,
     behavior: "smooth",
   });
+});
+
+lastWidth = window.innerWidth;
+$(window).resize(function () {
+  if (window.innerWidth != lastWidth) {
+    location.reload();
+    scrollTrigger.refresh();
+  }
+  lastWidth = window.innerWidth;
 });

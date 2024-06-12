@@ -28,6 +28,7 @@ header {
 header .logo {
   padding-left: 48px;
   padding-top: 45px;
+  transition: 0.5s;
 }
 header ul {
   display: flex;
@@ -35,6 +36,15 @@ header ul {
   padding-right: 48px;
   position: absolute;
   right: 0;
+  transition: 0.5s;
+}
+header .logo.on {
+  padding-top: 25px;
+  transition: 0.5s;
+}
+header ul.on {
+  padding-top: 37px;
+  transition: 0.5s;
 }
 header ul li {
   font-size: 20px;
@@ -46,11 +56,17 @@ header ul li a {
   color: #000;
   text-decoration: none;
 }
+header ul li a.on {
+  display: block;
+  text-decoration: none;
+}
 header ul li:hover a {
   text-decoration: underline;
+  color: #f4831f;
 }
-header .on {
+header .check {
   text-decoration: underline;
+  color: #f4831f;
 }
 /* top section */
 
@@ -95,10 +111,9 @@ header .on {
   left: 65%;
 }
 .top-img .smell {
-  width: 7vw;
+  width: 10vw;
   top: 28%;
   left: 45%;
-  transform: rotate(-50deg);
 }
 .top-img .top-img4 {
   width: 15vw;
@@ -231,6 +246,7 @@ header .on {
 }
 
 /* mobile-app */
+
 .mobile-app {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -293,15 +309,6 @@ header .on {
   margin-top: 1.3vw;
   margin-left: 1.5vw;
   text-decoration: underline;
-  animation: name-event 4s infinite;
-}
-@keyframes name-event {
-  0% {
-    transform: translateX(-10px);
-  }
-  100% {
-    transform: translateY(0);
-  }
 }
 .mobile-app .mobile-app-sticky .contents .mobile-app-bug .text {
   margin-top: 1vh;
@@ -310,11 +317,11 @@ header .on {
   font-size: 14px;
   font-weight: 500;
   line-height: 1.4;
-  animation: name-event 4s infinite;
+  animation: app-event 1s;
 }
 .mobile-app .mobile-app-sticky .contents .mobile-app-bug .color-choose {
   display: flex;
-  animation: name-event 4s infinite;
+  animation: app-event 1s;
 }
 .mobile-app
   .mobile-app-sticky
@@ -480,10 +487,11 @@ header .on {
 .mobile-app .mobile-app-sticky .contents .mobile-app-bug .review-wrapper {
   display: flex;
   margin-top: 4vh;
+  animation: app-event 1s;
 }
 .mobile-app .mobile-app-sticky .contents .mobile-app-bug .review {
   margin-left: 1.7vw;
-  animation: name-event 4s infinite;
+  animation: name-event 5s infinite;
 }
 .mobile-app .mobile-app-sticky .contents .mobile-app-bug .run {
   width: 12vw;
@@ -525,6 +533,7 @@ header .on {
   position: absolute;
   top: 27%;
   left: 56%;
+  width: 1.5vw;
   animation: sparko-event 2s infinite;
 }
 @keyframes sparko-event {
@@ -548,7 +557,7 @@ header .on {
 }
 .mobile-app .mobile-app-textwrapper .sparky {
   position: absolute;
-  top: 26%;
+  top: 28%;
   left: 57%;
   animation: sparky-event 2s infinite;
 }
@@ -626,7 +635,7 @@ header .on {
   height: 300px;
   background: url(./assets/images/dog10.png) 50% / cover;
   left: 45%;
-  top: 55%;
+  top: 45%;
   animation: dog-event 3s infinite;
   transform: rotate(3deg);
 }
@@ -652,16 +661,33 @@ header .on {
 }
 
 /* img gallery */
+.svg-container {
+  width: 400px;
+  height: 400px;
+  position: absolute;
+  top: 10%;
+  left: 39%;
+}
+.svg-icon path {
+  stroke: #fece00;
+  stroke-width: 6;
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  animation: draw 3s linear forwards infinite;
+}
+
+@keyframes draw {
+  0% {
+    stroke-dashoffset: 1000;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
 .img-wrapper {
   height: 150vh;
   position: relative;
-}
-.img-wrapper .smell {
-  width: 150px;
-  transform: rotate(70deg);
-  position: absolute;
-  top: 30%;
-  left: 45%;
+  background-color: #ebe3da;
 }
 .img-wrapper .img-dog1 {
   background: url(./assets/images/dog4.jpg) 50% / cover;
@@ -786,6 +812,7 @@ footer li a {
   text-decoration: none;
 }
 footer p {
+  margin: 0;
   margin-top: 50px;
   line-height: 1.5;
   font-weight: 500;
@@ -793,6 +820,19 @@ footer p {
 footer .contents {
   display: flex;
   justify-content: space-between;
+}
+footer .contents span a {
+  display: block;
+  font-size: 14px;
+  color: #bababa;
+  text-decoration: none;
+  margin-top: 20px;
+  width: 150px;
+  height: 40px;
+  line-height: 40px;
+  border: 2px solid #bababa;
+  border-radius: 30px;
+  text-align: center;
 }
 footer .contents .top {
   display: flex;
