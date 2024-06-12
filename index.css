@@ -714,6 +714,7 @@ header .check {
   top: 45%;
   left: 50%;
   transform: translate(-50%, -50%);
+  line-height: 1.6;
 }
 .img-wrapper .homepage-wrapper {
   display: flex;
@@ -848,4 +849,11 @@ footer .contents .top img {
   height: 20px;
   margin-top: 55px;
   margin-left: 10px;
+}
+@media screen and (max-width: 1490px) {
+  .mobile-app .mobile-app-textwrapper .sparko {
+    position: absolute;
+    top: 22vw;
+    left: 34vw;
+  }
 }
