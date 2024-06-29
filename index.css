@@ -600,7 +600,7 @@ header .check {
 
 /* horizontal */
 .horizon-wrapper {
-  overflow-x: hidden;
+  overflow: hidden;
 }
 .horizon-wrapper .horizon-cotainer-wrapper {
   display: flex;
@@ -855,5 +855,19 @@ footer .contents .top img {
     position: absolute;
     top: 22vw;
     left: 34vw;
+  }
+  .mobile-app .mobile-app-textwrapper .rain {
+    position: absolute;
+    top:26vw;
+    left:46vw;
+    width: 20px;
+  }
+  .mobile-app .mobile-app-textwrapper .sparky {
+    position: absolute;
+    top:21.5vw;
+    left:35vw;
+  }
+  .mobile-app {
+    height:1200vh;
   }
 }
